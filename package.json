@@ -1,0 +1,57 @@
+{
+  "name": "keytrace",
+  "version": "1.0.0",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "dev": "nodemon --watch . --exec \"electron .\"",
+    "build:mac": "electron-builder --mac",
+    "build:win": "electron-builder --win"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "A simple key tracing application.",
+  "devDependencies": {
+    "electron": "^33.0.2",
+    "electron-reload": "^2.0.0-alpha.1"
+  },
+  "build": {
+    "asar": true,
+    "files": [
+      "**/*",
+      "!**/*.dylib",
+      "!**/*.exe"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "assets/icon.jpg"
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ],
+      "icon": "assets/icon.jpg"
+    }
+  },
+  "dependencies": {
+    "chrome-remote-interface": "^0.33.2",
+    "fs-extra": "^11.2.0",
+    "path": "^0.12.7"
+  }
+}

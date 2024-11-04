@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Tracker Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js -->
+</head>
+<body>
+    <h1>Activity Tracker Dashboard</h1>
+    
+    <div class="dashboard">
+        <!-- Mouse Clicks Panel -->
+        <div class="panel">
+            <h2>Mouse Clicks</h2>
+            <div class="count" id="mouse-clicks">0</div>
+        </div>
+
+        <!-- Key Presses Panel -->
+        <div class="panel">
+            <h2>Key Presses</h2>
+            <div class="count" id="key-presses">0</div>
+        </div>
+
+        <!-- Clickable Button Area -->
+        <div class="activity-log">
+            <div class="button-area">
+                <div class="button">Click</div>
+            </div>
+        </div>
+
+         <!-- Chart Panel -->
+         <div class="chart-panel panel">
+            <canvas id="activityChart" width="400" height="200"></canvas>
+        </div>
+
+        <!-- Activity Log Panel -->
+        <div class="panel activity-log">
+            <h2>Recent Activity</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Timestamp</th>
+                        <th>Application</th>
+                        <th>Window Title</th>
+                        <th>URL</th>
+                       
+                    </tr>
+                </thead>
+                <tbody id="activity-log"></tbody>
+            </table>
+            <button id="clear-logs">Clear Logs</button>
+        </div>
+
+       
+    </div>
+
+ <script src="renderer.js"></script>
+</body>
+</html>
